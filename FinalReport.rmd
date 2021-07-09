@@ -5,12 +5,17 @@ date: "21 June 2021"
 output: html_document
 ---
 
+
 ```{r include=FALSE,echo=FALSE}
 require(tidyverse)
 require(tigerstats)
 require(knitr)
 GSS <-read.csv(file="GSScsv.csv",header=TRUE)
+library(dplyr)
+GSS <- GSS %>%
+mutate(across(where(is.character), as.factor))
 ```
+
 
 # Introduction
 
